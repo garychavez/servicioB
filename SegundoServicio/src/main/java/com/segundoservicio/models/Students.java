@@ -1,5 +1,9 @@
 package com.segundoservicio.models;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+
 public class Students {
 	
 		private int student_id;
