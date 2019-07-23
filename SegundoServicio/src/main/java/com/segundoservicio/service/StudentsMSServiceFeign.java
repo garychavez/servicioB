@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.segundoservicio.models.Students;
 import com.segundoservicio.models.StudentsMS;
 import com.segundoservicio.rest.StudentsMicroSRest;
 
@@ -18,7 +19,9 @@ public class StudentsMSServiceFeign implements StudentsMSService{
 
 	@Override
 	public List<StudentsMS> findAll() {
-		return studentsMicrofeign.listar().stream().map(p -> new StudentsMS()).collect(Collectors.toList());
+		Date date = null;
+		Students students = null;
+		return studentsMicrofeign.listar().stream().map(p -> new StudentsMS(students, date)).collect(Collectors.toList());
 	}
 
 	@Override

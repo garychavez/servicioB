@@ -8,6 +8,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -16,6 +17,7 @@ import com.segundoservicio.models.StudentsMS;
 import com.segundoservicio.service.StudentsMSService;
 
 @Service("serviceRestTemplate")
+@FeignClient(name = "BoodCam",url= "https://localhost:8443")
 public class StudentsServiceImplement implements StudentsMSService {
 
 	@Autowired

@@ -14,7 +14,7 @@ import com.segundoservicio.service.StudentsMSService;
 public class StudentsMSController {
 
 	@Autowired
-	@Qualifier("serviceFeign")
+	@Qualifier("serviceRestTemplate")
 	private StudentsMSService studentsMSService;
 	
 	@GetMapping("/Get")
